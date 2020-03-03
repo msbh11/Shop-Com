@@ -4,7 +4,7 @@ Laravel project
 
 User Panel : https://bit.ly/34epnU4 
 
-Admin Panel : https://bit.ly/2YAICWt
+Admin Panel : https://bit.ly/2YAICWt   For Login : email: admin@gmail.com  password: 123456
 
 
 Admin dashboard feature– 
