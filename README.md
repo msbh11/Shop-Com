@@ -4,4 +4,15 @@ Laravel project
 
 User Panel : https://bit.ly/34epnU4 Admin Panel : https://bit.ly/2YAICWt
 
-Admin Dashboard Feature : Category Management , Brand Management, Product Management, Cart Management 
+Admin dashboard feature– 
+	Admin authentication system
+	Tracks all information about products , bills
+	Easily export PDF for the shopping bill
+	Improved editing , adding, updating of records in resource management of shopping data
+	
+User End feature– 
+	User authentication system
+	Category based product presentation
+	Cart system 
+	Shipping , billing info 
+
