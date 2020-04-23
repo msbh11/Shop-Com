@@ -9,7 +9,7 @@ Laravel project
 
 >Admin dashboard feature– 
 
-* Admin authentication system \t
+* Admin authentication system 
 * Tracks all information about products , bills
 * Easily export PDF for the shopping bill
 * Improved editing , adding, updating of records in resource management of shopping data
