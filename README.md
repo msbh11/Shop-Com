@@ -25,4 +25,3 @@
 ### [Preview Customer Site](https://bit.ly/34epnU4) 
 
 ### [Inventory Manager Preview](https://bit.ly/2YAICWt) 
-    For Login : email: admin@gmail.com  password: 123456
