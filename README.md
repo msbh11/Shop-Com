@@ -1,25 +1,27 @@
 
-# ShopCom
+## ShopCom
 
-Laravel project
+    Laravel project
 
-[User ](https://bit.ly/34epnU4) 
-
-[Inventory Manager ](https://bit.ly/2YAICWt) For Login : email: admin@gmail.com  password: 123456
-
+</br>
 
 >Admin dashboard feature– 
 
-* Admin authentication system 
-* Tracks all information about products , bills
-* Easily export PDF for the shopping bill
-* Improved editing , adding, updating of records in resource management of shopping data
+    Admin authentication system 
+    Tracks all information about products , bills
+    Easily export PDF for the shopping bill
+    Improved editing , adding, updating of records in resource management of shopping data
 
-
+</br>
 
 >User End feature– 
 
-* User authentication system
-*	Category based product presentation
-* Shopping Cart system 
-*	Shipping , billing info 
+    User authentication system
+	Category based product presentation
+    Shopping Cart system 
+	Shipping , billing info 
+
+### [Preview Customer Site](https://bit.ly/34epnU4) 
+
+### [Inventory Manager Preview](https://bit.ly/2YAICWt) 
+    For Login : email: admin@gmail.com  password: 123456
