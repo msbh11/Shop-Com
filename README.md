@@ -1,7 +1,8 @@
 
 ## ShopCom
 
-    Laravel project
+    Ecommerce Web Application 
+    Tech used : Laravel 5.7, php7
 
 </br>
 
