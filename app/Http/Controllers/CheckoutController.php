@@ -20,6 +20,11 @@ class CheckoutController extends Controller
         return view('front-end.checkout.checkout-content');
         
     }
+    public function signUpForm()
+    {
+        return view('front-end.customer.customer-signup');
+
+    }
     // public function Validate($request)
     // {
     //     $this->validate($request,[
@@ -28,35 +33,7 @@ class CheckoutController extends Controller
     //     ]);
     // }
 
-    public function customerLoginCheck(Request $request){
-            $customer = Customer::where('email_address', $request->email_address)->first();
-            
-            if(password_verify($request->password , $customer->password ))
-            {
-                Session::put('customerId', $customer->id);
-                Session::put('customerName', $customer->first_name.' '.$customer->last_name);
-                
-                return redirect('/checkout/shipping');
-                //echo 'valid pass';
-            }
-            else{
-                echo 'password invalid';
-            }
-
-    }
-
-    public function customerLogout(){
-            Session::forget('customerId');
-            Session::forget('customerName');
-
-            return redirect('/');
-    }
-
-    public function newCustomerLoginCheck(){
-            return view('front-end.customer.customer-login');
-
-    }
-
+    
     public function customerSignUp(Request $request) {
 
         // $this->Validate($request);
@@ -74,13 +51,15 @@ class CheckoutController extends Controller
         Session::put('customerName',$customer->first_name.' '.$customer->last_name);
 
         $data = $customer->toArray();
-        // Mail::send('front-end.mails.confirmation-mail', $data, function ($message) use ($data) {
-        //     $message->to($data['email_address']);
-        //     $message->subject('Confirmation mail');
-        // });
+        Mail::send('front-end.mails.confirmation-mail', $data, function ($message) use ($data) {
+            $message->to($data['email_address']);
+            $message->subject('Confirmation mail');
+        });
 
         return redirect('/checkout/shipping');
     }
+
+    
 
     public function shippingForm() {
         $customer = Customer::find(Session::get('customerId'));
@@ -139,6 +118,39 @@ class CheckoutController extends Controller
     }
     public function completeOrder() {
             return redirect('/')->with('message', 'Order Accepted successfully');;
+    }
+
+
+    //sign up customer and login 
+
+    public function customerLoginCheck(Request $request){
+        $customer = Customer::where('email_address', $request->email_address)->first();
+        echo $request->password;
+        echo $customer->password;
+        if(password_verify($request->password, $customer->password ))
+        {
+            Session::put('customerId', $customer->id);
+            Session::put('customerName', $customer->first_name.' '.$customer->last_name);
+            
+            return redirect('/checkout/shipping');
+            //echo 'valid pass';
+        }
+        else{
+            redirect('checkout')->with('message','Password Incorrect');
+        }
+
+    }
+
+    public function customerLogout(){
+        Session::forget('customerId');
+        Session::forget('customerName');
+
+        return redirect('/');
+    }
+
+    public function customerLoginForm(){
+        return view('front-end.customer.customer-login');
+
     }
 
 }

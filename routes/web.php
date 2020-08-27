@@ -82,6 +82,13 @@ Route::post('/cart/update',[
 
 /*Checkout*/
 
+
+Route::get('/signup', [
+    'uses' => 'CheckoutController@signUpForm',
+    'as' => 'signup-customer-head' 
+]);
+
+
 Route::post('/customer/registration',[
     'uses' =>  'CheckoutController@customerSignUp',
     'as' =>'customer-sign-up'
@@ -98,16 +105,18 @@ Route::post('checkout/customer-logout',[
     'as' =>'customer-logout'
 ]);
 
-Route::post('customer-login',[
-    'uses' =>  'CheckoutController@newCustomerLoginCheck',
-    'as' =>'new-customer-login'
+Route::get('customer/login',[
+    'uses' =>  'CheckoutController@customerLoginForm',
+    'as' =>'new-login'
 ]);
 
 
 Route::get('/checkout', [
     'uses' => 'CheckoutController@index',
-    'as' => 'checkout' 
+    'as' => 'signup-customer' 
 ]);
+
+
 
 Route::get('/checkout/payment',[
     'uses' =>  'CheckoutController@paymentForm',

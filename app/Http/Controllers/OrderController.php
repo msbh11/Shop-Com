@@ -76,10 +76,14 @@ class OrderController extends Controller
     }
 
     public function updateOrderStatus($id){
+
         $order = Order::find($id);
-        $payment = Payment::where('order_id', $order->id);
+        $payment = Payment::where('order_id', $order->id)->first();
         $payment->payment_status = 'paid';
         $payment->save();
+
+
+        $data = $order->toArray();
 
         return redirect('/order/manage-order')->with('message', 'payment status updated');
     }

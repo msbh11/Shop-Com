@@ -2,7 +2,7 @@
 @section('body')
     <div class="banner1">
         <div class="container">
-            <h3><a href="index.html">Home</a> / <span>Add To Cart</span></h3>
+            <h3><a href="{{route ('shop') }}">Home</a> / <span>Add To Cart</span></h3>
         </div>
     </div>
     <!--banner-->
@@ -80,7 +80,7 @@
                         @elseif(Session::get('customerId'))
                             <a href="{{ route('checkout-shipping') }}" class="btn btn-success pull-right">Checkout</a>
                         @else
-                            <a href="{{ route('checkout') }}" class="btn btn-success pull-right">Checkout</a>
+                            <a href="{{ route('signup-customer') }}" class="btn btn-success pull-right">Checkout</a>
                         @endif
                         <a href="{{route('shop')}}" class="btn btn-success">Continue shopping</a>
                     </div>

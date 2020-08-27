@@ -6,17 +6,15 @@
             </div>
             <div class="top-right">
                 <ul>
-                    <li><a href="checkout.html">Checkout</a></li>
                     @if(Session::get('customerId'))
                     <li><a href="#" onclick="document.getElementById('customerLogoutForm').submit();">Logout</a></li>
                     <form id="customerLogoutForm" action="{{ route('customer-logout')}}" method="POST">
                         @csrf
                     </form>
                     @else
-                    <li><a href="{{ route('new-customer-login') }}">Login </a></li>
-
+                    <li><a href="{{ route('new-login') }}">Login</a></li>
+                    <li><a href="{{ route('signup-customer-head') }}">Create Account</a></li>
                     @endif
-                    <li><a href="registered.html">Create Account</a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>
@@ -26,7 +24,7 @@
         <div class="container">
             <div class="logo-nav">
                 <div class="logo-nav-left">
-                    <h1><a href="index.html">New Shop <span>Shop anywhere</span></a></h1>
+                    <h1><a href="{{ route('shop') }}">New Shop <span>Shop anywhere</span></a></h1>
                 </div>
                 <div class="logo-nav-left1">
                     <nav class="navbar navbar-default">
@@ -64,7 +62,7 @@
                 </div>
                 <div class="header-right2">
                     <div class="cart box_1">
-                        <a href="checkout.html">
+                        <a href="#">
                             <h3> <div class="total">
                                     <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
                                 <img src="{{ asset('/') }}front-end/images/bag.png" alt="" />

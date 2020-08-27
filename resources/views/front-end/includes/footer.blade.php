@@ -14,8 +14,8 @@
             <div class="col-md-3 footer-grid">
                 <h4>My Account</h4>
                 <ul>
-                    <li><a href="{{route('checkout')}}">Login</a></li>
-                    <li><a href="{{route('checkout')}}"> Create Account </a></li>
+                    <li><a href="{{ route('new-login') }}">Login</a></li>
+                    <li><a href="{{route('signup-customer-head')}}"> Create Account </a></li>
                 </ul>
             </div>
             <div class="col-md-3 footer-grid">

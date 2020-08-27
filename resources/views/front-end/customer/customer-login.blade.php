@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
+@extends('front-end.master')
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -24,11 +21,11 @@
         }
 
         .login-container form {
-            padding: 10%;
+            padding: 5%;
         }
 
         .btnSubmit {
-            width: 50%;
+            width: 20%;
             border-radius: 1rem;
             padding: 1.5%;
             border: none;
@@ -39,40 +36,41 @@
             color: #0062cc;
             background-color: #fff;
         }
-
-        .login-form-2 .ForgetPwd {
-            color: #fff;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
     </style>
-</head>
-
-<body>
-
-    <div class="container login-container">
-        <div class="row">
-            <div class="col-md-6 login-form-2">
-                <h3>Login for Form 2</h3>
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email *" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Your Password *" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btnSubmit" value="Login" />
-                    </div>
-                    <div class="form-group">
-
-                        <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
-                    </div>
-                </form>
-            </div>
+@section('body')
+    <div class="banner1">
+        <div class="container">
+            <h3><a href="{{ route('shop') }}">Home</a>/Login</h3>
         </div>
     </div>
-</body>
+    <!--banner-->
 
-</html>
+    <!--content-->
+    <div class="content">
+        <!--single-->
+        <div class="single-wl3">
+            <div class="container">
+                <div class="row">
+                
+                        <div class="col-md-6 login-form-2">
+                            <form action="{{route('customer-login')}}" method = "post">
+                            @csrf
+                            <div class="form-group">
+                                <input type="email" name="email_address" class="form-control" placeholder="Your Email *" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password"  class="form-control" placeholder="Your Password *" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btnSubmit" value="Log-in" />
+                            </div>
+                            </form>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+        <!--single-->
+        <!--new-arrivals-->
+    </div>
+@endsection
